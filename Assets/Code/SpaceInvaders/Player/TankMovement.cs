@@ -18,7 +18,7 @@ public class TankMovement : MonoBehaviour
     [SerializeField]
     private float horizontalInput;
     [Header("Boundary")]
-    [SerializeField] private int min; // Think of this Vector 2 as a DPad controller 
+    [SerializeField] private int min;
     [SerializeField] private int max;
     private void Update()
     {

@@ -36,7 +36,6 @@ public class AlienManager : MonoBehaviour
             WinCondition = true;
             GameManager.Instance.UpdateState(GameManager.GameState.GAMEOVER);
         }
-            
     }
 
     private void PopulateAliens()

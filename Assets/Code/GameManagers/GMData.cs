@@ -15,8 +15,7 @@ public class GMData : ScriptableObject
     /// </summary>
     public GameManager.GameState CurrentGameState;
 
-    private int highScore;
-
+    [SerializeField] int highScore;
     public void SetHighScore(int value)
     {
         highScore = value;
