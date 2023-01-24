@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4442695930226848}
   - component: {fileID: 61405822548902684}
-  - component: {fileID: 114389876806806596}
   - component: {fileID: 114327524299492894}
   m_Layer: 0
   m_Name: PlayerTank
@@ -62,20 +61,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2272654, y: 0.24635094}
   m_EdgeRadius: 0
---- !u!114 &114389876806806596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482645704358528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc197b216ebd86b4e9838bf079d6a7df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _moveRate: 10
-  _axisInput: {x: 0, y: 0}
 --- !u!114 &114327524299492894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,8 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireBulletKey: 32
-  bulletPrefab: {fileID: 114509010208742048, guid: 5077b5aa14c14b94482d767ed52f3377,
-    type: 3}
+  bulletPrefab: {fileID: 114509010208742048, guid: 5077b5aa14c14b94482d767ed52f3377, type: 3}
   firePoint: {fileID: 4442700284848926}
 --- !u!1 &1620801966766994
 GameObject:

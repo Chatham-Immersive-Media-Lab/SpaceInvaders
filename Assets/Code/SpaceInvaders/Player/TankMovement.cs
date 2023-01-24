@@ -1,34 +1,38 @@
 ﻿// ----------------------------------------------------------------------------
-//  University of Pittsburgh  
-//  GamesEdu Workshop #2
-//  19 SEPT 2018
+//  Chatham University
+//  JAN 2023
 // ----------------------------------------------------------------------------
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+
 /// <summary>
-/// Moves Player Tank via Input Axis
+/// Moves Player Tank Left and Right within a boundary
 /// </summary>
 public class TankMovement : MonoBehaviour 
-{
+{ 
+    [SerializeField] 
+    private float moveRate;
+    [Header("Input Axis")]
     [SerializeField]
-    private float _moveRate;
-
-    [SerializeField, Header("Input Axis")]
-    private Vector2 _axisInput; // Think of this Vector 2 as a DPad controller 
-    /*public Vector2 AxisInput
-    {
-        get
-        {
-            _axisInput.Set(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            return _axisInput;
-        }
-        private set { _axisInput = value; }
-    }*/
-
+    private float horizontalInput;
+    [Header("Boundary")]
+    [SerializeField] private int min; // Think of this Vector 2 as a DPad controller 
+    [SerializeField] private int max;
     private void Update()
     {
-        _axisInput.Set(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        transform.Translate(_axisInput * Time.deltaTime * _moveRate);
+        horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(new Vector2(horizontalInput,0) * (Time.deltaTime * moveRate));
+        
+        // Check Boundary
+        if (transform.position.x < min)
+        {
+            transform.position = new Vector2(min, 0);
+        }
+        else if(transform.position.x > max)
+        {
+            transform.position = new Vector2(max, 0);
+        }
     }
 }
