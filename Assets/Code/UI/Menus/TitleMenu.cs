@@ -4,6 +4,7 @@
 //  19 SEPT 2018
 // ----------------------------------------------------------------------------
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 /// <summary>
 /// Implements TitleMenu behaviours
@@ -11,7 +12,7 @@ using UnityEngine.UI;
 public class TitleMenu : MonoBehaviour {
     public Button StartGameButton;
     public Button QuitButton;
-
+    public UnityEvent onClick;
     private void Awake()
     {
         // Subscribe / Listen for the onClick Button Event and execute HandleResumeClick method when heard / notified

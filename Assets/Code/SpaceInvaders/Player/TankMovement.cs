@@ -2,6 +2,8 @@
 //  Chatham University
 //  JAN 2023
 // ----------------------------------------------------------------------------
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +22,12 @@ public class TankMovement : MonoBehaviour
     [Header("Boundary")]
     [SerializeField] private int min;
     [SerializeField] private int max;
+
+    private void Start()
+    {
+        Debug.Log("Start");
+    }
+
     private void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
@@ -34,5 +42,10 @@ public class TankMovement : MonoBehaviour
         {
             transform.position = new Vector2(max, 0);
         }
+    }
+
+    private void LateUpdate()
+    {
+        Debug.Log("LateUpdate");
     }
 }

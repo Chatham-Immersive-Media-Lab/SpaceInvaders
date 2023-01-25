@@ -67,6 +67,7 @@ public class SceneController : MonoBehaviour
     {
         yield return StartCoroutine(Fade(1f));
         yield return SceneManager.LoadSceneAsync(sceneName);
+        Debug.Log($"Active Scene {SceneManager.GetActiveScene()}");
         onSceneChangeStart.Invoke(true);
         yield return StartCoroutine(Fade(0f));
         onSceneChangeComplete.Invoke(true);

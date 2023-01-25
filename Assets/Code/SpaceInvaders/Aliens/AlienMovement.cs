@@ -28,7 +28,6 @@ public class AlienMovement : MonoBehaviour {
             newPosition = new Vector3(position.x + moveBy,
                                       position.y - Mathf.Abs(moveBy),
                                       0f);
-
         }
         else
         {

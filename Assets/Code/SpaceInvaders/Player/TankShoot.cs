@@ -14,15 +14,21 @@ public class TankShoot : MonoBehaviour {
     public TankBullet bulletPrefab;
     public Transform firePoint;
 	// Use this for initialization
-	void Start () {
-		
-	}
+
 	
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(fireBulletKey))
         {
-            Instantiate(bulletPrefab, firePoint);
+            
+            TankBullet bullet = Instantiate(bulletPrefab, firePoint);
+            bullet.name = "Bullet Bill";
+            
+            bullet.transform.position += new Vector3(1, 0, 0);
+            TankBullet bullet2 = Instantiate(bulletPrefab, firePoint);
+            bullet2.transform.position += new Vector3(-1, 0, 0);
         }
+ 
     }
+	
 }
